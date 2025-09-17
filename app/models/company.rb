@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
-    has_many :users
-    has_many :jobs
+    has_many :users, dependent: :destroy
+    has_many :jobs, dependent: :destroy
 
-    validate_presence_of :name, :description
+    validates_presence_of :name, :description
 end

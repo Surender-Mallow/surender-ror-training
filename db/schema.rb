@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_17_044508) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_17_051308) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -28,10 +28,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_17_044508) do
     t.string "location", null: false
     t.float "salary", null: false
     t.string "status"
-    t.uuid "companies_id", null: false
+    t.uuid "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["companies_id"], name: "index_jobs_on_companies_id"
+    t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -39,9 +39,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_17_044508) do
     t.string "last_name", null: false
     t.string "email", null: false
     t.integer "type", null: false
-    t.uuid "companies_id"
+    t.uuid "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["companies_id"], name: "index_users_on_companies_id"
+    t.index ["company_id"], name: "index_users_on_company_id"
   end
 end

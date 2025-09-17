@@ -6,7 +6,7 @@ class CreateJobs < ActiveRecord::Migration[8.0]
       t.string :location, null: false
       t.float :salary, null: false
       t.string :status
-      t.references :companies, type: :uuid, null: false
+      t.references :company, type: :uuid, null: false
 
       t.timestamps
     end

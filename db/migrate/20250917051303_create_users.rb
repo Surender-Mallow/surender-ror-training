@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[8.0]
       t.string :last_name, null: false
       t.string :email, null: false
       t.integer :type, null: false
-      t.references :companies, type: :uuid, null: true
+      t.references :company, type: :uuid, null: true
 
       t.timestamps
     end
