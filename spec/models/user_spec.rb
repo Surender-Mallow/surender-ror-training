@@ -22,10 +22,10 @@ RSpec.describe User, type: :model do
       expect(user.errors[:last_name]).to include("can't be blank")
     end
 
-    it "validates presence of type" do
-      user.type = nil
+    it "validates presence of user_type" do
+      user.user_type = nil
       expect(user).not_to be_valid
-      expect(user.errors[:type]).to include("can't be blank")
+      expect(user.errors[:user_type]).to include("can't be blank")
     end
 
     it "validates presence of email" do

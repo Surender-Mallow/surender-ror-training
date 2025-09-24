@@ -32,7 +32,7 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: "Company was successfully updated." }
         format.json { render :show, status: :ok, location: @company }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end

@@ -1,0 +1,29 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>First Name:</strong>
+    <%= user.first_name %>
+  </p>
+
+  <p>
+    <strong>Last Name:</strong>
+    <%= user.last_name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <p>
+    <strong>User Type:</strong>
+    <%= user.user_type %>
+  </p>
+
+<% if user.user_type == 'employer' %>
+  <p>
+    <strong>Company:</strong>
+    <%= user&.company&.name %>
+  </p>
+  <% end %>
+
+</div>
